@@ -4,6 +4,7 @@ const cors = require("cors"); // Para las reglas  de conexiones con el backend d
 const{ dbConnection } = require ("./db/db");
 const Role  = require("./routes/role")
 const User = require("./routes/user")
+const Auth = require("./routes/auth");
 require("dotenv").config(); //Configurar las variables de entorno
 
 //Crear aplicacion
@@ -13,6 +14,7 @@ app.use(express.json()); //Todo lo que manipula el servidor sera JSON
 app.use(cors());
 app.use("/api/role", Role);
 app.use("/api/user", User);
+app.use("/api/auth", Auth);
 
 //Escuchar el puerto 3001
 app.listen(process.env.PORT, () => console.log("Backend server running OK on port: ", process.env.PORT));
