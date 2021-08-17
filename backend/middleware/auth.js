@@ -18,4 +18,4 @@ const auth = async (req, res, next) => {
   }
 };
 
-module.exports = { auth };
+module.exports =  auth; //No van en corchetes debido a que es solo una funcion y los middleware nunca van con llaves
